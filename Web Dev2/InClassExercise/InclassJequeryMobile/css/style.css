@@ -1,0 +1,451 @@
+@charset "UTF-8";
+/* css document */
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*-------------------------------------------
+--------------------------------------------*/
+/*
+.center{
+  width: 200px
+  margin: auto
+  margin-top: -50px
+}
+.hexagon{ 
+  width: 200px
+  height: 400px
+  overflow: hidden
+  visibility: hidden
+  transform: rotate(120deg)
+  cursor: pointer
+}
+.hexagon-in1{ 
+  overflow: hidden
+  width: 100%
+  height: 100%
+  transform: rotate(-60deg)
+}
+.hexagon-in2{
+  width: 100%
+  height: 100%
+  visibility: visible
+  transform: rotate(-60deg)  
+  background: url('http://lorempixel.com/g/250/350/people')
+    repeat: no-repeat
+    position: 50%
+  }
+.hexagon-in2:hover{
+  background: url('http://lorempixel.com/250/350/people')
+  }*/
+/*////////////////////////////*/
+/*h1{
+	color: blue;
+}
+  .hexagon {
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: rotate(120deg);
+       -moz-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+         -o-transform: rotate(120deg);
+            transform: rotate(120deg);
+    cursor: pointer;
+    }
+.hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+       -moz-transform: rotate(-60deg);
+        -ms-transform: rotate(-60deg);
+         -o-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+    }
+.hexagon-in2 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+/*    background-image: url(http://placekitten.com/240/240);
+*/
+	/*background-color: red;
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+       -moz-transform: rotate(-60deg);
+        -ms-transform: rotate(-60deg);
+         -o-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+    }
+.hexagon-in2:hover {
+    background-image: url(http://placekitten.com/241/241);
+    }
+
+.hexagon2 {
+    width: 200px;
+    height: 400px;
+    margin: -80px 0 0 20px;
+    }*/
+    /*//////////////////*/
+
+
+/* CSS3-only Hexagons Shapes using COMPASS/SCSS.
+Code derived from article 
+http://www.queness.com/post/13901/create-beautiful-hexagon-shapes-with-pure-css3 
+by Kevin Liew.
+
+* The code shows the use of text, images and SVG inside CSS3 hexagons.
+* Hexagons are scalable just modifying a SCSS variable.
+* Simple hover behavior is included
+* @TODO: Hexagons layout adapts to parent region dimensions, but the first hexagon of each "row" should include the class 'hex-gap' to fit in properly. This feature will need some Javascript, not included in this example.
+
+* For not SCSS/COMPASS users, plain CSS3 code is attached at the end of this file.
+*/
+
+/* Customization vars */
+$hexagon_scale: 1.2;      // Change this to resize the hexagons
+$images_scale: 0.7;       // Change this to resize images inside hexagons
+$pad-vertical: 5px;         // Vertical   pad between hexagons. Should be >=0
+$pad-horizontal: 5px;       // Horizontal pad between hexagons. Should be >=0
+$border-width: 1px;         // Hexagons borders parameters
+$border-style: solid;
+$border-color: black;
+
+/* Not changes needed from here */
+$hexagon_base_width: 150px;
+$hexagon_width:       $hexagon_scale*$hexagon_base_width;
+$hexagon_height:      $hexagon_width/1.73205;               // h=w/sqrt(3)                     
+$hexagon_margin_v:    $hexagon_scale*21px+$pad-vertical;    // minimum 21px to avoid hexagons overlap
+$hexagon_margin_h:    $pad-horizontal;          
+
+.hex {
+  width:$hexagon_width;
+  height:$hexagon_height;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  @include background-size(auto $hexagon_width*$images_scale);    
+  position: relative;
+  float:left;
+  margin-top: $hexagon_margin_v*$hexagon_scale;
+  margin-right: $hexagon_margin_h*$hexagon_scale;
+  margin-bottom: $hexagon_margin_v*$hexagon_scale;
+  margin-left: $hexagon_margin_h*$hexagon_scale;
+  text-align:center;
+  zoom:1;
+  border-right: $border-width $border-style $border-color;
+  border-left: $border-width $border-style $border-color;
+
+  /* The class 'hex-gap' should be included in the 1st hexagon
+  of each line, for avoiding overlaps between hexagon lines */
+  /* Some Javascript code (not included in this example) 
+  would be needed to change the DOM dinamically*/
+  &.hex-gap {
+    margin-left: $hexagon_height;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity:0.5;
+       @include box-shadow(red 2px 2px 10px);
+  }
+  a {
+    display:block;
+    width: 100%;
+    height:100%;
+    text-indent:-9999em;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .corner-1,
+  .corner-2 {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: inherit;                
+    z-index:-2;
+    border-right: $border-width $border-style $border-color;
+  border-left: $border-width $border-style $border-color;
+    overflow:hidden;
+    @include backface-visibility(hidden);
+     
+    &:before {
+        width:  $hexagon_scale*173px;  // scale * 100 * sqrt(3)
+        height: $hexagon_scale*173px;  // scale * 100 * sqrt(3) 
+        content: '';
+        position: absolute;
+        background: inherit;
+        top:0;
+        left: 0;
+        z-index: 1;
+        background: inherit;
+        background-repeat: no-repeat;
+        @include backface-visibility(hidden);          
+    }
+  }
+
+  .corner-1 {
+    z-index:-1;
+    @include transform(rotate(60deg));
+    &:before {
+        @include transform(rotate(-60deg) translate(-$hexagon_height, 0px));
+        @include transform-origin(0,0);
+    }
+  }
+
+  .corner-2 {
+    @include transform(rotate(-60deg));
+    &:before {
+        @include transform(rotate(60deg) 
+                           translate((-$hexagon_height/2)+0px, 
+                                      (-2-$hexagon_scale*2*$hexagon_margin_h)+0px)); 
+        bottom: 0;
+    }
+  }
+
+  /* Custom styles*/
+  .inner {   
+    color: #333;
+  }
+  
+  h4 {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: $hexagon_scale*1.2em;
+    margin:0;     
+  }
+  
+  hr {
+    width:60%;
+    border:0;
+    border-top:3px solid #eee;
+    margin: $hexagon_scale*10px auto;
+  }
+  
+  p {
+    font-size: $hexagon_scale*1em;
+    font-family: 'Kotta One', serif;
+    width:80%;
+    margin:0 auto;
+  }
+
+  &.hex-1 {
+    background: #74cddb;
+  }
+  
+  &.hex-2 {
+    background: #f5c53c;
+  }
+  
+  &.hex-3 {
+    background: #80b971;
+  }
+}
+
+/*SASS/COMPASS CSS OUTPUT:
+*/.hex {
+  width: 180px;
+  height: 103.9231px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-background-size: auto 126.0px;
+  -moz-background-size: auto 126.0px;
+  -o-background-size: auto 126.0px;
+  background-size: auto 126.0px;
+  position: relative;
+  float: left;
+  margin-top: 36.24px;
+  margin-right: 6px;
+  margin-bottom: 36.24px;
+  margin-left: 6px;
+  text-align: center;
+  zoom: 1;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.hex.hex-gap {
+  margin-left: 103.9231px;
+}
+
+.hex:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-box-shadow: red 2px 2px 10px;
+  -moz-box-shadow: red 2px 2px 10px;
+  box-shadow: red 2px 2px 10px;
+}
+
+.hex a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hex .corner-1,
+.hex .corner-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -2;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hex .corner-1:before,
+.hex .corner-2:before {
+  width: 207.6px;
+  height: 207.6px;
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: inherit;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hex .corner-1 {
+  z-index: -1;
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.hex .corner-1:before {
+  -webkit-transform: rotate(-60deg) translate(-103.9231px, 0px);
+  -moz-transform: rotate(-60deg) translate(-103.9231px, 0px);
+  -ms-transform: rotate(-60deg) translate(-103.9231px, 0px);
+  -o-transform: rotate(-60deg) translate(-103.9231px, 0px);
+  transform: rotate(-60deg) translate(-103.9231px, 0px);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.hex .corner-2 {
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+.hex .corner-2:before {
+  -webkit-transform: rotate(60deg) translate(-51.96155px, -14px);
+  -moz-transform: rotate(60deg) translate(-51.96155px, -14px);
+  -ms-transform: rotate(60deg) translate(-51.96155px, -14px);
+  -o-transform: rotate(60deg) translate(-51.96155px, -14px);
+  transform: rotate(60deg) translate(-51.96155px, -14px);
+  bottom: 0;
+}
+
+.hex .inner {
+  color: #333;
+}
+
+.hex h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.44em;
+  margin: 0;
+}
+
+.hex hr {
+  width: 60%;
+  border: 0;
+  border-top: 3px solid #eee;
+  margin: 12px auto;
+}
+
+.hex p {
+  font-size: 1.2em;
+  font-family: 'Kotta One', serif;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.hex.hex-1 {
+  background: #74cddb;
+}
+
+.hex.hex-2 {
+  background: #f5c53c;
+}
+
+.hex.hex-3 {
+  background: #80b971;
+}
+
+
