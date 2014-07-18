@@ -104,6 +104,9 @@ table {
     background-repeat: no-repeat;
     background-position: 50%;
     background-image: url(../img/sara.jpg);
+    
+        background-size: cover;
+
     visibility: visible;
     -webkit-transform: rotate(-60deg);
        -moz-transform: rotate(-60deg);
