@@ -1,17 +1,13 @@
 <!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
 <title>FeelTheBits</title>
 
 <link rel="stylesheet" href="css/style.css"/>
-
-    <!-- Put these into the <head> -->
-    <link rel="stylesheet" href="css/responsive-nav.css">
-    <script src="js/responsive-nav.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
-
-
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script> -->
 
 </head>
 
@@ -19,47 +15,33 @@
 
 <div class="wrapper">
 
-<header>
-    <div><object class="logo"  data="img/LogoFeelTheBits.svg" type="image/svg+xml">
+<section id="lab">
+<div>
+    <div><object  data="img/LogoFeelTheBits.svg" type="image/svg+xml">
     </object></div>
 
-
-
-<!--   end menu -->
-
-<nav class="nav-collapse">
-        <ul>
-            <li><a href="#">My profile</a></li>
-            <li><a href="#">Categories</a></li>
-
-        </ul>
-</nav>
-
-<!--   end menu -->
-
-
+    <div class="menu">
+        <a href="">Categories</a>
+        <a href="">My profile</a>
+    </div>
 
     <div class="socialMedia">
         <a href="#">b</a>
         <a href="#">a</a>
         <a href="#">c</a>
     </div>
+</div>
 
 <!-- Search -->
 <form method="get" id="search">
   <input name="q" type="text" placeholder="Search your mood..." />
 </form>
 <!-- end search -->
-</header>
 
-
-
-
+<div class="title">
 <h1 id="title1">Tell us your mood, </h1>
-<h1 id="title2">We will match video</h1>
-
-
-<section id="lab">
+<h1 id="title2">We’ll match video</h1>
+</div>
 
     <article class="content">   
 
@@ -141,27 +123,14 @@
 	</article>
 </section>
 
-<footer id="bottommenu">
-    <a href="" class="secondmenu">about</a>
-    <a href="" class="secondmenu">contact us</a>
-    <a href="" class="secondmenu">privacy</a>
-
-</footer>
-
 </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="js/jquery.fittext.js"></script>
 
     <script type="text/javascript">
-    $("#title1").fitText(2.8)
-    $("#title2").fitText(2.8)
-     // $(".logo").fitText(1)
-    </script>
-
-
-    <script>
-        var nav = responsiveNav(".nav-collapse");
+    $("#title1").fitText(2)
+    $("#title2").fitText(2)
     </script>
 
 </body>
