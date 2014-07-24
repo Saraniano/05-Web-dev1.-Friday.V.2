@@ -220,5 +220,12 @@ a{
 
 
 
+#trapezium {
+   height: 0; 
+   width: 80px;
+   border-bottom: 80px solid blue;
+   border-left: 40px solid transparent;
+   border-right: 40px solid transparent;
+}
 
 
