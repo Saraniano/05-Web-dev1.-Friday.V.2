@@ -1,0 +1,11 @@
+Hi George,
+
+I have 2 jQuery which one I've used for my menu and the other has been used for my title.
+If you click on hamburger, my menu slid in and in mobile version my social media icons are removed from homepage and come to menu. ( you'll find out when you resize the screen any way).
+
+I haven't used percentages for my hexagons as become really small in mobile size and instead, I designed my structure change base on different devices; On the other word, I kept my hexagon the same size but in each device you will see different design.
+
+for all other margin, fonts and positioning I have used em or %.
+
+Hope I didn't confused you too much
+sara
