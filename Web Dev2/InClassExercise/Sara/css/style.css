@@ -53,3 +53,55 @@ table {
 /*-------------------------------------------
 --------------------------------------------*/
 
+/* Backgrounds will cover all the section
+	* --------------------------------------- */
+	/*#section0,
+	#section1,
+	#section2,
+	#section3{
+		background-size: cover;
+	}*/
+
+	/* Defining each sectino background and styles
+	* --------------------------------------- */
+/*	#section0{
+		background-image: url();
+		padding: 30% 0 0 0;
+	}
+	#section2{
+		background-image: url(imgs/bg3.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3{
+		background-image: url(imgs/bg4.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3 h1{
+		color: #000;
+	}
+*/
+
+ 	/*Adding background for the slides
+	* --------------------------------------- */
+	#slide1{
+		background-image: url(../img/newsarawebK.jpg);
+		background-size: cover;
+
+	}
+#logo{
+	position: absolute;
+	left: 0;
+	top:0;
+}
+
+.title1{
+	font-size: 5em;
+	position: absolute;
+	left: 0;
+}
+.firstlinetitle{
+	top:2em;
+}
+.secondlinetitle{
+	top:3em;
+}
